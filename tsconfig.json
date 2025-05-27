@@ -1,18 +1,11 @@
 {
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "compilerOptions": {
-    "types": ["dayjs"],
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "bundler",
     "target": "esnext",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "types": ["dayjs"],
+    "lib": ["esnext", "dom"],
     "skipLibCheck": false,
     "resolveJsonModule": true,
     "esModuleInterop": true,
@@ -20,30 +13,15 @@
     "downlevelIteration": true,
     "baseUrl": "./",
     "paths": {
-      "@data/*": [
-        "data/*"
-      ],
-      "@src/*": [
-        "src/*"
-      ],
-      "@api/*": [
-        "src/api/*"
-      ],
-      "@hooks/*": [
-        "src/hooks/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@ui/*": [
-        "src/components/ui-components/*"
-      ],
-      "@redux/*": [
-        "src/redux/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ]
+      "@data/*": ["src/data/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@src/*": ["src/*"],
+      "@api/*": ["src/api/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@components/*": ["src/components/*"],
+      "@ui/*": ["src/components/ui-components/*"],
+      "@redux/*": ["src/redux/*"],
+      "@assets/*": ["src/assets/*"]
     },
     "jsx": "react-jsx"
   }
