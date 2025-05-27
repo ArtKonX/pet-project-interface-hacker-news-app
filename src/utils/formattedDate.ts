@@ -1,4 +1,4 @@
-import dayjs from 'Dayjs'
+import dayjs from 'dayjs'
 
 const formattedDate = (time: number) => {
 

@@ -3,6 +3,7 @@
     "src"
   ],
   "compilerOptions": {
+    "types": ["dayjs"],
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",

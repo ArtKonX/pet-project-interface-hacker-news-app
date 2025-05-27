@@ -1,4 +1,4 @@
-import dayjs from 'Dayjs'
+import dayjs from 'dayjs'
 import { useEffect, useState } from 'react';
 
 const Time = () => {
