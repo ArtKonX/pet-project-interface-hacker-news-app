@@ -6,12 +6,12 @@ import SingleNewsPage from './pages/SingleNewsPage';
 function App() {
 
   return (
-    <Router basename='/news-matrix-app'>
+    <Router>
       <Switch>
         <Route exact path="/" component={NewsPage} />
         <Route path="/news/:id" component={SingleNewsPage} />
       </Switch>
-    </ Router>
+    </Router>
   )
 }
 

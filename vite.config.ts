@@ -24,7 +24,7 @@ export default defineConfig({
       "@assets": path.resolve(__dirname, "./src/assets"),
     }
   },
-  base: '/news-matrix-app',
+  base: '/',
   server: {
     port: 3000,
     host: 'localhost'
