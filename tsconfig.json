@@ -4,7 +4,11 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "target": "esnext",
-    "types": ["dayjs"],
+    "types": [
+      "react",
+      "react-dom",
+      "node"
+    ],
     "lib": ["esnext", "dom"],
     "skipLibCheck": false,
     "resolveJsonModule": true,

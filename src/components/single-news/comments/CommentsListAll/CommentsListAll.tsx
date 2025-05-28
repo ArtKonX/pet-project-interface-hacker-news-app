@@ -20,9 +20,9 @@ const CommentsListAll = (
                         (<CommentWithBtn onMore={handleToggleComments} {...comment} />) :
                         (<CommentItem isKids={false} {...comment} isFirst={indx + 1} />)}
                     {isLoading && <SceletonComments lengthItems={4} />}
-                    {embeddedComments[comment.id] && !embeddedComments[comment.id]?.isHidden &&
+                    {embeddedComments && embeddedComments[comment.id] && !embeddedComments[comment.id]?.isHidden &&
                         <EnhancedMoreCommentsList isKids={true} onMore={handleToggleComments}
-                            comment={comment} comments={embeddedComments[comment.id].comments}
+                            comment={comment} comments={embeddedComments[comment.id]?.comments}
                             isLoading={embeddedComments[comment.id].comments.length < comment.kids.length}
                             isError={embeddedComments[comment.id].isError}
                             lengthComments={embeddedComments[comment.id].comments.length}

@@ -10,15 +10,17 @@ export interface CommentData {
 }
 
 export interface EmbeddedCommentData {
-    comments: CommentData[]
-    isHidden: boolean,
-    isLoading: boolean,
-    isError: boolean
+    [key: number]: {
+        comments: CommentData[];
+        isHidden: boolean;
+        isLoading: boolean;
+        isError: boolean;
+    }
 }
 
 export interface CommentsListAllData {
     comments: CommentData[],
-    embeddedComments: EmbeddedCommentData[],
+    embeddedComments: EmbeddedCommentData,
     handleToggleComments: ({ kids, idComment }: { kids: number[], idComment: number }) => void,
     isLoading: boolean
 }

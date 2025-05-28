@@ -8,7 +8,6 @@ import CommentsListAll from "@src/components/single-news/comments/CommentsListAl
 import SkeletonItems from "@src/components/skeletons/SkeletonItems/SkeletonItems";
 import withCommentsLoader from "@src/hocs/withCommentsLoader";
 import InfoMessage from "@src/components/InfoMessage/InfoMessage";
-import { CommentData, EmbeddedCommentData } from "@src/interfaces/comments";
 import BtnUpdate from "@src/components/ui/BtnUpdate/BtnUpdate";
 
 const EnhancedCommentsList = withCommentsLoader(CommentsListAll);
@@ -19,8 +18,8 @@ const SingleNewsPage = () => {
     const [getEmbeddedComments, { isLoading: embeddedCommentsLoading, isError: embeddedCommentsError }] = useGetEmbeddedCommentsMutation();
     const [getComments, { isLoading: commentsLoading }] = useGetCommentsMutation();
 
-    const [embeddedComments, setEmbeddedComments] = useState<EmbeddedCommentData[]>([]);
-    const [comments, setComments] = useState<CommentData[]>([]);
+    const [embeddedComments, setEmbeddedComments] = useState({});
+    const [comments, setComments] = useState([]);
     const [commentsError, setCommentsError] = useState(false);
     const [numberAllComments, setNumberAllComments] = useState(0);
 
@@ -56,11 +55,9 @@ const SingleNewsPage = () => {
 
     const handleToggleComments = ({ kids, idComment }: { kids: number[], idComment: number }) => {
         setEmbeddedComments(prev => {
-            const currentItem = prev[idComment] || {
-                comments: [],
+            const currentItem = prev[idComment] || { comments: [],
                 isHidden: true,
-                isLoading: embeddedCommentsLoading
-            };
+                isLoading: embeddedCommentsLoading };
             return {
                 ...prev,
                 [idComment]: {
@@ -101,10 +98,7 @@ const SingleNewsPage = () => {
         fetchAllComments();
     }, [storyData]);
 
-    const enhancedCommentsListProps = { comments, embeddedComments,
-        handleToggleComments, isLoading: commentsLoading,
-        commentsError, embeddedCommentsError,
-        lengthComments: storyData?.kids?.length }
+    const enhancedCommentsListProps = { comments, embeddedComments, handleToggleComments, isLoading: commentsLoading, commentsError, embeddedCommentsError, lengthComments: storyData?.kids?.length }
 
     if (storyLoading) {
         return (

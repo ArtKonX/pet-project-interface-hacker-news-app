@@ -2,7 +2,7 @@ import { CommentData, EmbeddedCommentData } from "../comments";
 
 export interface WrappedCommentsLoaderProps {
     comments: CommentData[],
-    embeddedComments: EmbeddedCommentData[],
+    embeddedComments: EmbeddedCommentData,
     handleToggleComments: ({ kids, idComment }: { kids: number[], idComment: number }) => void,
     isLoading: boolean,
     commentsError: boolean,
