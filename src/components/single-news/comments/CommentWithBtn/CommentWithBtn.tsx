@@ -8,7 +8,7 @@ const CommentWithBtn = ({ ...props }: CommentBtnProps) => {
 
     return (
         <div className="bg-gray-400/18 p-4 flex flex-col">
-            <p className="text-md overflow-x-scroll max-w-full w-full py-3">
+            <p className="text-md overflow-x-auto max-w-full w-full py-3">
                 {parse(String(text))}
             </p>
             <div className="flex justify-between mt-5">

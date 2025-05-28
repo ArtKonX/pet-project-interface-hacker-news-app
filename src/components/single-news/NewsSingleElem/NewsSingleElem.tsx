@@ -16,7 +16,7 @@ const NewsSingleElem = ({ ...props }: NewsSingleElemProps) => {
             </h3>
 
             <p className="2xl:text-xl xs:text-lg text-black
-            mb-10 overflow-x-scroll pb-2">
+            mb-10 overflow-x-auto pb-2">
                 Ссылка на новость: <Link to={url}>{url}</Link>
             </p>
             <div className="flex text-md justify-between text-gray-800 mb-4">

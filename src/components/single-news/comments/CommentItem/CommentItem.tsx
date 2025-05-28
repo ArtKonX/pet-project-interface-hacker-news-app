@@ -11,7 +11,7 @@ const CommentItem = ({ ...props }: CommentData) => {
             'w-full bg-green-50'} border-3 border-green-700/90
         dark:bg-green-200/60 p-4 flex
         flex-col ${!isFirst && 'mt-6'}`}>
-            <p className="max-w-full w-full overflow-scroll
+            <p className="max-w-full w-full overflow-x-auto
             py-3 2xl:text-md xs:text-lg">
                 {parse(String(text))}
             </p>
