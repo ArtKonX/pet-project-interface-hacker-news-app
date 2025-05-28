@@ -7,7 +7,7 @@ const InfoMessage = ({ text, isMinWidth }: { text: string, isMinWidth: boolean }
         p-5 border-3 border-green-700/90
         flex justify-center items-center
         mb-4 text-xl font-bold ${isMinWidth ? 'w-4/5 bg-gray-400/18' :
-                    'w-full bg-green-50'}`}>
+                    'w-full bg-green-50'} dark:bg-green-200/60`}>
                 {text}
             </div>
         </div>
