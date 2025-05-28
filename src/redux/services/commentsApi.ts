@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import VITE_API_URL from '@src/environment/environment';
 
-const urlApi = import.meta.env.VITE_API_URL;
+const urlApi = VITE_API_URL;
 
 const commentsApi = createApi({
     reducerPath: 'commentsApi',
