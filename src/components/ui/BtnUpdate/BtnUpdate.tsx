@@ -14,7 +14,6 @@ const BtnUpdate = ({ text, onAction, isScrollingUp, isCurrentLoading }: BtnUpdat
                 transition-all
                 transform-origin-center
                 ${isScrollingUp && 'animate-spin'}
-                transition-all
                 duration-500
                 transform
                 disabled:text-green-700/70

@@ -3,7 +3,7 @@ import NewsSingleElem from "@src/components/single-news/NewsSingleElem/NewsSingl
 import { useGetCommentsMutation, useGetEmbeddedCommentsMutation } from "@src/redux/services/commentsApi";
 import { useGetNewStoryQuery } from "@src/redux/services/matrixNewsApi"
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import CommentsListAll from "@src/components/single-news/comments/CommentsListAll/CommentsListAll";
 import SkeletonItems from "@src/components/skeletons/SkeletonItems/SkeletonItems";
 import withCommentsLoader from "@src/hocs/withCommentsLoader";
@@ -55,9 +55,11 @@ const SingleNewsPage = () => {
 
     const handleToggleComments = ({ kids, idComment }: { kids: number[], idComment: number }) => {
         setEmbeddedComments(prev => {
-            const currentItem = prev[idComment] || { comments: [],
+            const currentItem = prev[idComment] || {
+                comments: [],
                 isHidden: true,
-                isLoading: embeddedCommentsLoading };
+                isLoading: embeddedCommentsLoading
+            };
             return {
                 ...prev,
                 [idComment]: {
@@ -119,6 +121,13 @@ const SingleNewsPage = () => {
 
     return (
         <Layout isSkeleton={false}>
+            <div className="relative w-full flex justify-start align-middle">
+                <Link to='/' className="absolute h-9 flex items-center cursor-pointer
+                font-bold text-3xl border-3
+                    border-green-700/90 bg-green-50 p-2
+                    text-green-800! hover:opacity-70 transition-all
+               duration-600 dark:bg-green-200/60">←</Link>
+            </div>
             <BtnUpdate text='↻' onAction={onUpdate} isCurrentLoading={storyLoading} />
             {storyData && <NewsSingleElem commentsLength={comments.length} {...storyData} />}
             <EnhancedCommentsList {...enhancedCommentsListProps} />
