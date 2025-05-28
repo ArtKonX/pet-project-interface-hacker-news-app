@@ -6,7 +6,7 @@ import SingleNewsPage from './pages/SingleNewsPage';
 function App() {
 
   return (
-    <Router basename='/news-matrix-app'>
+    <Router basename='/pet-project-interface-hacker-news-app'>
       <Switch>
         <Route exact path="/" component={NewsPage} />
         <Route path="/news/:id" component={SingleNewsPage} />

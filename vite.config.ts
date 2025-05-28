@@ -24,7 +24,7 @@ export default defineConfig({
       "@assets": path.resolve(__dirname, "./src/assets"),
     }
   },
-  base: '/news-matrix-app',
+  base: '/pet-project-interface-hacker-news-app',
   server: {
     port: 3000,
     host: 'localhost'
